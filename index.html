@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Time</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 jumbotron text-center">
+                <img src="https://media.giphy.com/media/NGSbD5vI6lUvC/giphy.gif" alt="Buster Keaton on a Train">
+                <h1>Train Time</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="currentSchedule">
+                <h5>Current Train Schedule</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="addTrain">
+                <h5>Add Train</h5>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <label for="train-name">Train Name</label>
+                        <br>
+                        <input class="form-control" type="text" id="trainName" placeholder="Silver Streak">
+                        <br>
+                        <br>
+                        <label for="destination">Destination</label>
+                        <br>
+                        <input class="form-control" type="text" id="destination" placeholder="Chicago">
+                        <br>
+                        <br>
+                        <label for="start">First Train Time (HH:MM Military Time)</label>
+                        <br>
+                        <input class="form-control" type="time" id="start" placeholder="7:00 am">
+                        <br>
+                        <br>
+                        <label for="frequency">Frequency (min)</label>
+                        <br>
+                        <input class="form-control" type="number" id="frequency">
+                        <br>
+                        <br>
+                        <button class="btn btn-primary" id="add-train">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDjaGML7v1LKHFNUFohZq6tK40OACAWmsY",
+            authDomain: "train-time-3c485.firebaseapp.com",
+            databaseURL: "https://train-time-3c485.firebaseio.com",
+            projectId: "train-time-3c485",
+            storageBucket: "train-time-3c485.appspot.com",
+            messagingSenderId: "553531235397"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="assets/javascript/moment.js"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
