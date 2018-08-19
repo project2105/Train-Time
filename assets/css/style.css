@@ -25,3 +25,7 @@ button {
     background-color: #337ab7;
     color: white;
 }
+
+input, button, label {
+    margin-left: 5px;
+}
